@@ -13,23 +13,33 @@ public class TesteDespesa {
         DespesaDAO dao = new DespesaDAO();
         String data = "19/08/2025";
         DateTimeFormatter mascara = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        /*Despesa despesa = new Despesa();
-        despesa.setId(100L);
-        despesa.setDescricao("Viagem de uber para a FIAP");
-        despesa.setValor(70.32);
-        despesa.setData(LocalDate.parse(data, mascara));
-        despesa.setCategoria(new Categoria(2L, ""));
-        dao.inserir(despesa);*/
+//        Despesa despesa = new Despesa();
+//        //despesa.setId(100L);
+//        despesa.setDescricao("Little Tiger");
+//        despesa.setValor(15000.00);
+//        despesa.setData(LocalDate.parse(data, mascara));
+//        despesa.setCategoria(new Categoria(1000L, ""));
+//        dao.inserir(despesa);
 
-
-        // teste para listar todas as despesas
-        List<Despesa> lista = dao.listar();
+        // Impressão dos dados do metodo relatorio
+        List<Despesa> lista = dao.relatorio();
         for(Despesa despesa : lista) {
-            System.out.println(despesa.getId());
             System.out.println(despesa.getDescricao());
             System.out.println("R$ " + despesa.getValor());
             System.out.println(despesa.getData().format(mascara));
-            System.out.println(despesa.getCategoria().getId());
+            System.out.println(despesa.getCategoria().getCategoria());
+            System.out.println("-------------------------------------------------------------------");
+
         }
+
+        // teste para listar todas as despesas
+//        List<Despesa> lista = dao.listar();
+//        for(Despesa despesa : lista) {
+//            System.out.println(despesa.getId());
+//            System.out.println(despesa.getDescricao());
+//            System.out.println("R$ " + despesa.getValor());
+//            System.out.println(despesa.getData().format(mascara));
+//            System.out.println(despesa.getCategoria().getId());
+//        }
     }
 }

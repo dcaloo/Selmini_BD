@@ -7,9 +7,9 @@ import java.util.List;
 
 public class Teste {
     public static void main(String[] args) {
-      //  Categoria categoria = new Categoria(6L, "teste");
+        Categoria categoria = new Categoria(1000L, "diversão");
         CategoriaDAO dao = new CategoriaDAO();
-        //dao.inserir(categoria);
+        dao.inserir(categoria);
         List<Categoria> lista = dao.listar();
         for(Categoria c : lista) {
             System.out.println(c.getId() + " --> " + c.getCategoria());
